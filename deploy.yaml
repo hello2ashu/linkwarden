@@ -18,10 +18,7 @@ services:
     depends_on:
       - postgres
       - meilisearch
-    services:
-      db:
-        environment:
-          OPENROUTER_API_KEY: ${openrouter}
+    OPENROUTER_API_KEY: ${openrouter}
   meilisearch:
     image: getmeili/meilisearch:latest
     restart: always
