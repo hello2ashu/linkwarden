@@ -2,22 +2,22 @@ services:
   postgres:
     image: postgres:16-alpine
     environment:
-      - POSTGRES_DB: linkwarden
-      - POSTGRES_USER: linkwardenuser
-      - POSTGRES_PASSWORD: linkwardenpass
+      - POSTGRES_DB=linkwarden
+      - POSTGRES_USER=linkwardenuser
+      - POSTGRES_PASSWORD=linkwardenpass
     restart: always
     volumes:
       - /volume1/docker/linkwarden/pgdata:/var/lib/postgresql/data
   linkwarden:
     environment:
       - DATABASE_URL=postgres://linkwardenuser:linkwardenpass@linkwarden-db:5432/linkwarden
-      - POSTGRES_DB: linkwarden
-      - POSTGRES_USER: linkwardenuser
-      - POSTGRES_PASSWORD: linkwardenpass
+      - POSTGRES_DB=linkwarden
+      - POSTGRES_USER=linkwardenuser
+      - POSTGRES_PASSWORD=linkwardenpass
       - MEILI_MASTER_KEY=hbdZ6Yb5me4LhIHBZtT3C93VupgMUxt96LlFugaK36AHTV53DgT5xhK0569gxoDh
-      - MEILI_HOST: http://meilisearch:7700
-      - OPENROUTER_MODEL: google/gemma-4-26b-a4b-it:free
-      - OPENROUTER_API_KEY= ${openrouter}
+      - MEILI_HOST=http://meilisearch:7700
+      - OPENROUTER_MODEL=google/gemma-4-26b-a4b-it:free
+      - OPENROUTER_API_KEY=${openrouter}
     restart: always
     image: ghcr.io/linkwarden/linkwarden:latest
     ports:
@@ -32,6 +32,6 @@ services:
     restart: always
     environment:
       - MEILI_MASTER_KEY=hbdZ6Yb5me4LhIHBZtT3C93VupgMUxt96LlFugaK36AHTV53DgT5xhK0569gxoDh
-      - MEILI_HOST: http://meilisearch:7700
+      - MEILI_HOST=http://meilisearch:7700
     volumes:
       - /volume1/docker/linkwarden/meili_data:/meili_data
