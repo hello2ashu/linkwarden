@@ -14,7 +14,7 @@ services:
     ports:
       - 3101:3101
     volumes:
-      - ./data:/data/data
+      - /volume1/docker/linkwarden/data:/data/data
     depends_on:
       - postgres
       - meilisearch
