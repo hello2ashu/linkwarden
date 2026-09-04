@@ -17,7 +17,7 @@ services:
       - MEILI_MASTER_KEY=hbdZ6Yb5me4LhIHBZtT3C93VupgMUxt96LlFugaK36AHTV53DgT5xhK0569gxoDh
       - MEILI_HOST: http://meilisearch:7700
       - OPENROUTER_MODEL: google/gemma-4-26b-a4b-it:free
-      - OPENROUTER_API_KEY=${openrouter}
+      - OPENROUTER_API_KEY= ${openrouter}
     restart: always
     image: ghcr.io/linkwarden/linkwarden:latest
     ports:
