@@ -1,7 +1,10 @@
 services:
   postgres:
     image: postgres:16-alpine
-    env_file: .env
+    environment:
+      - POSTGRES_DB: linkwarden
+      - POSTGRES_USER: linkwardenuser
+      - POSTGRES_PASSWORD: linkwardenpass
     restart: always
     volumes:
       - /volume1/docker/linkwarden/pgdata:/var/lib/postgresql/data
@@ -28,7 +31,8 @@ services:
   meilisearch:
     image: getmeili/meilisearch:latest
     restart: always
-    env_file:
-      - .env
+    environment:
+      - MEILI_MASTER_KEY=hbdZ6Yb5me4LhIHBZtT3C93VupgMUxt96LlFugaK36AHTV53DgT5xhK0569gxoDh
+      - MEILI_HOST: http://meilisearch:7700
     volumes:
       - /volume1/docker/linkwarden/meili_data:/meili_data
