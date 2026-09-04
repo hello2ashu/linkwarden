@@ -12,7 +12,7 @@ services:
     restart: always
     image: ghcr.io/linkwarden/linkwarden:latest
     ports:
-      - 3101:3101
+      - 3101:3000
     volumes:
       - /volume1/docker/linkwarden/data:/data/data
     depends_on:
