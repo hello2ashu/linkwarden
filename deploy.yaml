@@ -10,7 +10,7 @@ services:
       - /volume1/docker/linkwarden/pgdata:/var/lib/postgresql/data
   linkwarden:
     environment:
-      - DATABASE_URL=postgres://linkwardenuser:linkwardenpass@linkwarden-db:5432/linkwarden
+      - DATABASE_URL=postgres://linkwardenuser:linkwardenpass@linkwarden-deploy-postgres-1:5432/linkwarden
       - POSTGRES_DB=linkwarden
       - POSTGRES_USER=linkwardenuser
       - POSTGRES_PASSWORD=linkwardenpass
