@@ -16,7 +16,7 @@ services:
       - POSTGRES_DB=linkwarden
       - POSTGRES_USER=linkwardenuser
       - POSTGRES_PASSWORD=linkwardenpass
-      - MEILI_MASTER_KEY=${linkwarden-meilisearch}
+      - MEILI_MASTER_KEY=${linkwardenmeilisearch}
       - MEILI_HOST=http://meilisearch:7700
       - OPENROUTER_MODEL=google/gemma-4-26b-a4b-it:free
       - OPENROUTER_API_KEY=${openrouter}
@@ -33,7 +33,7 @@ services:
     image: getmeili/meilisearch:latest
     restart: always
     environment:
-      - MEILI_MASTER_KEY=${linkwarden-meilisearch}
+      - MEILI_MASTER_KEY=${linkwardenmeilisearch}
       - MEILI_HOST=http://meilisearch:7700
     volumes:
       - /volume1/docker/linkwarden/meili_data:/meili_data
